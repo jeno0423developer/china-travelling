@@ -1,104 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>China Travel Guide - Your Journey Starts Here</title>
-    <meta name="description" content="Discover China with professional local guides. Private tours, cultural experiences, and seamless travel arrangements for international visitors.">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Discover China with professional local guides. Private tours, cultural experiences, and seamless travel arrangements for international visitors." />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="China Travel Guide - Your Journey Starts Here" />
+    <meta property="og:description" content="Discover China with professional local guides. Private tours, cultural experiences, and seamless travel arrangements for international visitors." />
+    <meta property="og:image" content="images/hero-china-1400.jpg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "China Travel Guide",
+      "description": "Professional local guides, personalized tours, and seamless travel arrangements in China.",
+      "url": ".",
+      "telephone": "+86 400-888-8888",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Beijing",
+        "addressCountry": "CN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/",
+        "https://www.instagram.com/"
+      ]
+    }
+    </script>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <div class="logo">
-                <i class="fas fa-map-marked-alt"></i>
+            <div class="logo" aria-hidden="false">
+                <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
                 <span>China Travel Guide</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links" role="menubar" aria-label="Primary">
+                <li role="none"><a role="menuitem" href="#home">Home</a></li>
+                <li role="none"><a role="menuitem" href="#services">Services</a></li>
+                <li role="none"><a role="menuitem" href="#cities">City Covers</a></li>
+                <li role="none"><a role="menuitem" href="#destinations">Destinations</a></li>
+                <li role="none"><a role="menuitem" href="#testimonials">Testimonials</a></li>
+                <li role="none"><a role="menuitem" href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
-            </div>
+            <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
-    <section class="hero" id="home" style="background: url('https://images.unsplash.com/photo-1508804051-64811e5e3d9e?w=1920&h=1080&fit=crop') center/cover no-repeat;">
-        <div class="hero-content">
+    <!-- Hero with responsive image -->
+    <section class="hero" id="home" aria-label="Hero">
+        <img
+          class="hero-bg"
+          src="images/hero-china-1400.jpg"
+          srcset="images/hero-china-400.jpg 400w, images/hero-china-800.jpg 800w, images/hero-china-1400.jpg 1400w"
+          sizes="100vw"
+          alt="Panoramic view of China's landscape"
+          style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;"
+          loading="lazy"
+        />
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-content container" style="position:relative; z-index:2;">
             <h1>Discover the Wonders of China</h1>
-            <p>Professional local guides ready to show you the best of Chinese culture, history, and natural beauty</p>
+            <p>Professional local guides ready to show you the best of Chinese culture, history, and natural beauty.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Get Your Free Quote</a>
-                <a href="#destinations" class="btn btn-secondary">Explore Destinations</a>
+                <a href="#cities" class="btn btn-secondary">See City Covers</a>
             </div>
         </div>
-        <div class="hero-overlay"></div>
     </section>
 
-    <section class="services" id="services">
+    <!-- City Covers: local images with srcset -->
+    <section id="cities" class="city-covers" aria-labelledby="city-covers-title">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
+            <h2 id="city-covers-title" class="section-title">Cover Cities — Featured Destinations</h2>
+            <p class="section-subtitle">Quick access to curated tour pages and itineraries for each city.</p>
+
+            <div class="city-covers-grid" role="list">
+                <!-- Beijing -->
+                <article class="city-cover" role="listitem" aria-labelledby="city-beijing-title">
+                    <a href="#beijing" class="city-link" aria-label="Explore Beijing tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/beijing-forbidden-city-1400.jpg"
+                              srcset="images/beijing-forbidden-city-400.jpg 400w, images/beijing-forbidden-city-800.jpg 800w, images/beijing-forbidden-city-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="The Forbidden City in Beijing at sunset"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-beijing-title">Beijing</h3>
+                                <p>Imperial history, the Great Wall, and ancient palaces.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <!-- Shanghai -->
+                <article class="city-cover" role="listitem" aria-labelledby="city-shanghai-title">
+                    <a href="#shanghai" class="city-link" aria-label="Explore Shanghai tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/shanghai-bund-1400.jpg"
+                              srcset="images/shanghai-bund-400.jpg 400w, images/shanghai-bund-800.jpg 800w, images/shanghai-bund-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="Shanghai skyline with the Bund and modern skyscrapers"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-shanghai-title">Shanghai</h3>
+                                <p>A blend of historic charm and futuristic skyline.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <!-- Xi'an -->
+                <article class="city-cover" role="listitem" aria-labelledby="city-xian-title">
+                    <a href="#xian" class="city-link" aria-label="Explore Xi'an tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/xian-terracotta-army-1400.jpg"
+                              srcset="images/xian-terracotta-army-400.jpg 400w, images/xian-terracotta-army-800.jpg 800w, images/xian-terracotta-army-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="Terracotta Army figures in Xi'an"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-xian-title">Xi'an</h3>
+                                <p>Terracotta Army, ancient city walls, and Silk Road history.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <!-- Guilin -->
+                <article class="city-cover" role="listitem" aria-labelledby="city-guilin-title">
+                    <a href="#guilin" class="city-link" aria-label="Explore Guilin tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/guilin-li-river-1400.jpg"
+                              srcset="images/guilin-li-river-400.jpg 400w, images/guilin-li-river-800.jpg 800w, images/guilin-li-river-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="Karst mountains and Li River near Guilin"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-guilin-title">Guilin</h3>
+                                <p>Breathtaking karst landscapes, river cruises, and serene retreats.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <!-- Chengdu -->
+                <article class="city-cover" role="listitem" aria-labelledby="city-chengdu-title">
+                    <a href="#chengdu" class="city-link" aria-label="Explore Chengdu tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/chengdu-panda-1400.jpg"
+                              srcset="images/chengdu-panda-400.jpg 400w, images/chengdu-panda-800.jpg 800w, images/chengdu-panda-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="Giant panda resting in Chengdu research base"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-chengdu-title">Chengdu</h3>
+                                <p>Meet giant pandas and taste sizzling Sichuan cuisine.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <!-- Hong Kong -->
+                <article class="city-cover" role="listitem" aria-labelledby="city-hongkong-title">
+                    <a href="#hongkong" class="city-link" aria-label="Explore Hong Kong tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/hongkong-victoria-harbour-1400.jpg"
+                              srcset="images/hongkong-victoria-harbour-400.jpg 400w, images/hongkong-victoria-harbour-800.jpg 800w, images/hongkong-victoria-harbour-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="Hong Kong skyline at dusk with Victoria Harbour"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-hongkong-title">Hong Kong</h3>
+                                <p>A vibrant mix of East and West with world-class dining and shopping.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+
+                <!-- Guiyang (featured) -->
+                <article class="city-cover featured" role="listitem" aria-labelledby="city-guiyang-title">
+                    <a href="#guiyang" class="city-link" aria-label="Explore Guiyang tours">
+                        <figure>
+                            <img
+                              loading="lazy"
+                              src="images/guiyang-waterfall-1400.jpg"
+                              srcset="images/guiyang-waterfall-400.jpg 400w, images/guiyang-waterfall-800.jpg 800w, images/guiyang-waterfall-1400.jpg 1400w"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              alt="Waterfall and lush green landscape around Guiyang"
+                              style="width:100%; height:100%; object-fit:cover; display:block;"
+                            />
+                            <figcaption>
+                                <h3 id="city-guiyang-title">Guiyang <span class="featured-badge" aria-hidden="true">Featured</span></h3>
+                                <p>Cool summer retreat with waterfalls and rich ethnic culture.</p>
+                                <span class="btn btn-cta">View Tours</span>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services" aria-labelledby="services-title">
+        <div class="container">
+            <h2 id="services-title" class="section-title">Our Services</h2>
             <p class="section-subtitle">Comprehensive travel solutions tailored for international visitors</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-user-guide"></i>
+                        <i class="fas fa-user-guide" aria-hidden="true"></i>
                     </div>
                     <h3>Professional Local Guides</h3>
-                    <p>Fluent English-speaking guides with deep knowledge of Chinese history, culture, and traditions</p>
+                    <p>Fluent English-speaking guides with deep knowledge of Chinese history, culture, and traditions. Trained for safety and excellent guest experience.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-route"></i>
+                        <i class="fas fa-route" aria-hidden="true"></i>
                     </div>
                     <h3>Customized Tours</h3>
-                    <p>Personalized itineraries designed around your interests, budget, and travel preferences</p>
+                    <p>Personalized itineraries designed around your interests, budget, and travel preferences. Private, small-group, and themed tours available.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-hotel"></i>
+                        <i class="fas fa-hotel" aria-hidden="true"></i>
                     </div>
                     <h3>Accommodation Booking</h3>
-                    <p>Handpicked hotels and guesthouses across China, from luxury resorts to authentic local stays</p>
+                    <p>Handpicked hotels and guesthouses across China, from luxury resorts to authentic local stays vetted for comfort and location.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-car"></i>
+                        <i class="fas fa-car" aria-hidden="true"></i>
                     </div>
                     <h3>Transportation Services</h3>
-                    <p>Private transfers, train tickets, and transportation arrangements for seamless travel</p>
+                    <p>Private transfers, train tickets, and seamless logistics planning to keep your trip on schedule and stress-free.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-utensils"></i>
+                        <i class="fas fa-utensils" aria-hidden="true"></i>
                     </div>
                     <h3>Culinary Experiences</h3>
-                    <p>Authentic Chinese cuisine tours, from street food to Michelin-starred restaurants</p>
+                    <p>Authentic Chinese cuisine tours, from street food to Michelin-starred restaurants — guided tastings with cultural context.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-shield-alt"></i>
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     </div>
                     <h3>Travel Assistance</h3>
-                    <p>24/7 support, visa guidance, and emergency assistance throughout your journey</p>
+                    <p>24/7 support, visa guidance, and emergency assistance throughout your journey. We provide local emergency contact numbers for each destination.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="destinations" id="destinations">
+    <!-- Destinations (detail cards) - images use srcset inside picture for responsiveness -->
+    <section class="destinations" id="destinations" aria-labelledby="destinations-title">
         <div class="container">
-            <h2 class="section-title">Top Destinations</h2>
+            <h2 id="destinations-title" class="section-title">Top Destinations</h2>
             <p class="section-subtitle">Explore China's most iconic cities and landscapes</p>
             <div class="destinations-grid">
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1508804051-64811e5e3d9e?w=800&h=450&fit=crop');">
+                <div class="destination-card" id="beijing">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/beijing-forbidden-city-400.jpg 400w, images/beijing-forbidden-city-800.jpg 800w, images/beijing-forbidden-city-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/beijing-forbidden-city-1400.jpg" alt="The Forbidden City in Beijing at sunset" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Beijing</h3>
                             <p>Imperial history meets modernity</p>
@@ -106,16 +308,22 @@
                     </div>
                     <div class="destination-info">
                         <h4>Beijing</h4>
-                        <p>Home to the Forbidden City, Great Wall, and Tiananmen Square</p>
+                        <p>Home to the Forbidden City, Great Wall, and Tiananmen Square. We offer walking tours, Great Wall day trips, and cultural evenings.</p>
                         <div class="destination-tags">
                             <span>History</span>
                             <span>Culture</span>
                             <span>Landmarks</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Beijing tour">Plan a Beijing Tour</a>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1537531383490-f6e0c7897e6f?w=800&h=450&fit=crop');">
+
+                <div class="destination-card" id="shanghai">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/shanghai-bund-400.jpg 400w, images/shanghai-bund-800.jpg 800w, images/shanghai-bund-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/shanghai-bund-1400.jpg" alt="Shanghai skyline with the Bund and modern skyscrapers" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Shanghai</h3>
                             <p>China's global financial hub</p>
@@ -123,16 +331,22 @@
                     </div>
                     <div class="destination-info">
                         <h4>Shanghai</h4>
-                        <p>Experience the blend of East and West in this dynamic metropolis</p>
+                        <p>Experience the blend of East and West in this dynamic metropolis — Bund walks, modern architecture tours, and boutique food tours.</p>
                         <div class="destination-tags">
                             <span>Modern</span>
                             <span>Shopping</span>
                             <span>Nightlife</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Shanghai tour">Plan a Shanghai Tour</a>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1591013928385-1cbe473517d9?w=800&h=450&fit=crop');">
+
+                <div class="destination-card" id="xian">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/xian-terracotta-army-400.jpg 400w, images/xian-terracotta-army-800.jpg 800w, images/xian-terracotta-army-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/xian-terracotta-army-1400.jpg" alt="Terracotta Army figures in Xi'an" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Xi'an</h3>
                             <p>Ancient capital of China</p>
@@ -140,16 +354,22 @@
                     </div>
                     <div class="destination-info">
                         <h4>Xi'an</h4>
-                        <p>Discover the Terracotta Army and Silk Road history</p>
+                        <p>Discover the Terracotta Army and Silk Road history with expert guides and small-group archaeology-focused tours.</p>
                         <div class="destination-tags">
                             <span>History</span>
                             <span>Archeology</span>
                             <span>Silk Road</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Xi'an tour">Plan a Xi'an Tour</a>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1528164343578-325f5f7d2e1d?w=800&h=450&fit=crop');">
+
+                <div class="destination-card" id="guilin">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/guilin-li-river-400.jpg 400w, images/guilin-li-river-800.jpg 800w, images/guilin-li-river-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/guilin-li-river-1400.jpg" alt="Karst mountains and Li River near Guilin" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Guilin</h3>
                             <p>China's most beautiful landscape</p>
@@ -157,16 +377,22 @@
                     </div>
                     <div class="destination-info">
                         <h4>Guilin</h4>
-                        <p>Breathtaking karst mountains and serene rivers</p>
+                        <p>Breathtaking karst mountains and serene rivers. Our boat cruises on the Li River are ideal for photographers and nature lovers.</p>
                         <div class="destination-tags">
                             <span>Nature</span>
                             <span>Scenic</span>
                             <span>Relaxation</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Guilin tour">Plan a Guilin Tour</a>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1564349429314-2e3e6dc9e5e1?w=800&h=450&fit=crop');">
+
+                <div class="destination-card" id="chengdu">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/chengdu-panda-400.jpg 400w, images/chengdu-panda-800.jpg 800w, images/chengdu-panda-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/chengdu-panda-1400.jpg" alt="Giant panda resting in Chengdu research base" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Chengdu</h3>
                             <p>Home of the giant pandas</p>
@@ -174,16 +400,22 @@
                     </div>
                     <div class="destination-info">
                         <h4>Chengdu</h4>
-                        <p>Meet pandas and experience Sichuan culture</p>
+                        <p>Meet pandas, taste Sichuan cuisine, and explore relaxed teahouse culture with a local guide.</p>
                         <div class="destination-tags">
                             <span>Wildlife</span>
                             <span>Food</span>
                             <span>Culture</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Chengdu tour">Plan a Chengdu Tour</a>
                     </div>
                 </div>
-                <div class="destination-card">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1536599017254-15f5c8e4d5ee?w=800&h=450&fit=crop');">
+
+                <div class="destination-card" id="hongkong">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/hongkong-victoria-harbour-400.jpg 400w, images/hongkong-victoria-harbour-800.jpg 800w, images/hongkong-victoria-harbour-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/hongkong-victoria-harbour-1400.jpg" alt="Hong Kong skyline at dusk with Victoria Harbour" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Hong Kong</h3>
                             <p>Asia's world city</p>
@@ -191,16 +423,22 @@
                     </div>
                     <div class="destination-info">
                         <h4>Hong Kong</h4>
-                        <p>A unique blend of Chinese and international culture</p>
+                        <p>A unique blend of Chinese and international culture — Victoria Peak, street food, and bustling nightlife await.</p>
                         <div class="destination-tags">
                             <span>Shopping</span>
                             <span>Cuisine</span>
                             <span>Nightlife</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Hong Kong tour">Plan a Hong Kong Tour</a>
                     </div>
                 </div>
-                <div class="destination-card featured-destination">
-                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1518495973542-4542c063e0b4?w=800&h=450&fit=crop');">
+
+                <div class="destination-card featured-destination" id="guiyang">
+                    <div class="destination-image">
+                        <picture>
+                          <source srcset="images/guiyang-waterfall-400.jpg 400w, images/guiyang-waterfall-800.jpg 800w, images/guiyang-waterfall-1400.jpg 1400w" sizes="(max-width:768px) 100vw, 33vw">
+                          <img src="images/guiyang-waterfall-1400.jpg" alt="Waterfall and lush green landscape around Guiyang" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy">
+                        </picture>
                         <div class="destination-overlay">
                             <h3>Guiyang</h3>
                             <p>Summer paradise in southwest China</p>
@@ -208,34 +446,38 @@
                     </div>
                     <div class="destination-info">
                         <h4>Guiyang <span class="featured-badge">Featured</span></h4>
-                        <p>Cool summer retreat with stunning waterfalls and ethnic culture</p>
+                        <p>Cool summer retreat with waterfalls, ethnic minority culture, and refreshing mountain air — perfect for escape trips.</p>
                         <div class="destination-tags">
                             <span>Nature</span>
                             <span>Waterfalls</span>
                             <span>Ethnic Culture</span>
                         </div>
+                        <a class="btn btn-link" href="#contact" aria-label="Plan Guiyang tour">Plan a Guiyang Tour</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="testimonials" id="testimonials">
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
         <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 id="testimonials-title" class="section-title">What Our Clients Say</h2>
             <p class="section-subtitle">Real experiences from travelers around the world</p>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <div class="testimonial-content" aria-hidden="false">
+                        <div class="rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
                         <p>"Our guide made our trip to China unforgettable. He was incredibly knowledgeable about Chinese history and culture. We felt like we had a friend showing us around."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">
+                        <div class="author-avatar" aria-hidden="true">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
@@ -244,17 +486,20 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <div class="rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
                         <p>"The customized tour exceeded all expectations. From the Terracotta Army to the beautiful landscapes of Guilin, every moment was perfectly planned."</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">
+                        <div class="author-avatar" aria-hidden="true">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
@@ -263,17 +508,20 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <div class="rating" aria-label="5 out of 5 stars">
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                            <i class="fas fa-star" aria-hidden="true"></i>
+                        </div>
                         <p>"Excellent service from start to finish. Our guide was friendly, professional, and spoke perfect English. We will definitely use China Travel Guide again!"</p>
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">
+                        <div class="author-avatar" aria-hidden="true">
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="author-info">
@@ -286,24 +534,25 @@
         </div>
     </section>
 
-    <section class="contact" id="contact">
+    <!-- Contact (unchanged) -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="container">
-            <h2 class="section-title">Get Your Free Travel Quote</h2>
+            <h2 id="contact-title" class="section-title">Get Your Free Travel Quote</h2>
             <p class="section-subtitle">Tell us about your travel plans and we'll create a personalized itinerary</p>
             <div class="contact-content">
-                <div class="contact-form">
-                    <form id="contactForm">
+                <div class="contact-form" aria-hidden="false">
+                    <form id="contactForm" method="post" action="#" novalidate>
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required />
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" required />
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number (optional)">
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number (optional)" />
                         </div>
                         <div class="form-group">
                             <label for="destination">Preferred Destination(s)</label>
@@ -320,11 +569,11 @@
                         </div>
                         <div class="form-group">
                             <label for="travelDate">Travel Dates</label>
-                            <input type="date" id="travelDate" name="travelDate" placeholder="Select your travel dates">
+                            <input type="date" id="travelDate" name="travelDate" />
                         </div>
                         <div class="form-group">
                             <label for="travelers">Number of Travelers</label>
-                            <input type="number" id="travelers" name="travelers" min="1" max="50" value="2" placeholder="Number of travelers">
+                            <input type="number" id="travelers" name="travelers" min="1" max="50" value="2" />
                         </div>
                         <div class="form-group">
                             <label for="message">Special Requests</label>
@@ -333,51 +582,54 @@
                         <button type="submit" class="btn btn-primary btn-full">Request Free Quote</button>
                     </form>
                 </div>
-                <div class="contact-info">
+
+                <aside class="contact-info" aria-labelledby="contact-info-title">
+                    <h3 id="contact-info-title" class="visually-hidden">Contact information</h3>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         <div>
                             <h4>Phone</h4>
                             <p>+86 400-888-8888</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>info@chinatravelguide.com</p>
+                            <p><a href="mailto:info@chinatravelguide.com">info@chinatravelguide.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         <div>
                             <h4>Headquarters</h4>
                             <p>Beijing, China</p>
                         </div>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-clock" aria-hidden="true"></i>
                         <div>
                             <h4>Office Hours</h4>
                             <p>Mon - Sun: 9:00 AM - 9:00 PM</p>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    <div class="social-links" aria-label="Social links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube" aria-hidden="true"></i></a>
                     </div>
-                </div>
+                </aside>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <div class="logo">
+                    <div class="logo" aria-hidden="true">
                         <i class="fas fa-map-marked-alt"></i>
                         <span>China Travel Guide</span>
                     </div>
@@ -388,6 +640,7 @@
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#cities">City Covers</a></li>
                         <li><a href="#destinations">Destinations</a></li>
                         <li><a href="#testimonials">Testimonials</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -396,23 +649,24 @@
                 <div class="footer-section">
                     <h4>Popular Destinations</h4>
                     <ul>
-                        <li><a href="#">Beijing</a></li>
-                        <li><a href="#">Shanghai</a></li>
-                        <li><a href="#">Xi'an</a></li>
-                        <li><a href="#">Guilin</a></li>
-                        <li><a href="#">Chengdu</a></li>
-                        <li><a href="#">Guiyang (Summer Retreat) ⭐</a></li>
+                        <li><a href="#beijing">Beijing</a></li>
+                        <li><a href="#shanghai">Shanghai</a></li>
+                        <li><a href="#xian">Xi'an</a></li>
+                        <li><a href="#guilin">Guilin</a></li>
+                        <li><a href="#chengdu">Chengdu</a></li>
+                        <li><a href="#guiyang">Guiyang (Summer Retreat) ⭐</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Newsletter</h4>
                     <p>Subscribe for travel tips and special offers</p>
-                    <form id="newsletterForm" class="newsletter-form">
-                        <input type="email" placeholder="Enter your email" required>
-                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    <form id="newsletterForm" class="newsletter-form" action="#" method="post">
+                        <input type="email" name="newsletter_email" placeholder="Enter your email" required />
+                        <button type="submit" aria-label="Subscribe"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
                     </form>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2024 China Travel Guide. All rights reserved.</p>
                 <div class="footer-links">
